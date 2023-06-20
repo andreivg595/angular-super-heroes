@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
-import { CdkTableModule } from '@angular/cdk/table';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CdkTableModule } from '@angular/cdk/table';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
@@ -23,11 +24,12 @@ const materialModules = [
   MatButtonModule,
   MatTableModule,
   MatIconModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatDialogModule,
   CdkTableModule,
   /* MatButtonModule,
   MatDividerModule,
-  MatFormFieldModule,
-  MatInputModule,
   MatMenuModule,
   MatProgressSpinnerModule,
   MatSelectModule,

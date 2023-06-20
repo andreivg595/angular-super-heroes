@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>
+  {{ data?.superhero?.id ? "Edit Superhero" : "Add Superhero" }}
+</h2>
+<form [formGroup]="form" (submit)="submit()">
+  <div mat-dialog-content>
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="dialogRef.close()">Cancel</button>
+    <button mat-button color="primary" type="submit" [disabled]="!form.valid">
+      Save
+    </button>
+  </div>
+</form>
