@@ -1,0 +1,18 @@
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './material.module';
+
+@NgModule({
+  declarations: [],
+  imports: [CommonModule, ReactiveFormsModule, MaterialModule],
+  exports: [CommonModule, ReactiveFormsModule, MaterialModule],
+})
+export class SharedModule {
+  static forRoot(): ModuleWithProviders<SharedModule> {
+    return {
+      ngModule: SharedModule,
+      providers: [],
+    };
+  }
+}
