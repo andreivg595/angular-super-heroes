@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   }
 
   addHero(): void {
-    this.openDialog();
+    this.openDialog({ id: 0, name: '' });
   }
 
   editHero(superhero: Superhero): void {
@@ -38,17 +38,19 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  openDialog(superhero?: Superhero): void {
+  openDialog(superhero: Superhero): void {
     const dialogRef = this.dialog.open(SuperheroFormComponent, {
       width: '400px',
-      data: superhero ? { superhero } : undefined,
+      data: { superhero },
     });
 
     dialogRef.afterClosed().subscribe((data) => {
-      if (data?.id) {
-        this.superheroService.updateSuperhero(data);
-      } else {
-        this.superheroService.addSuperhero(data);
+      if (data) {
+        if (data.id === 0 && data.name) {
+          this.superheroService.addSuperhero(data);
+        } else {
+          this.superheroService.updateSuperhero(data);
+        }
       }
     });
   }
