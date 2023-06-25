@@ -31,9 +31,13 @@ export class SuperheroFormComponent implements OnInit {
 
   setForm(superhero: Superhero): void {
     this.form.patchValue({
-      id: superhero.id,
-      name: superhero.name,
+      id: superhero?.id,
+      name: superhero?.name,
     });
+  }
+
+  close() {
+    this.dialogRef.close();
   }
 
   submit() {
